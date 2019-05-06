@@ -52,6 +52,5 @@ public class DetectiveWitchTest {
         suspect.addProperty("wood");
         suspect.setVolume(0.4);
         assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
-
     }
 }

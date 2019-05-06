@@ -8,10 +8,17 @@ import static org.junit.Assert.assertThat;
 public class DoctorTest {
 
     @Test
-    public void confirmDoctorHasLastName() {
+    public void confirmDoctorCanGetLastNameFromFull() {
         Doctor doctor = new Doctor();
         doctor.setName("Jonas Jones");
         assertThat(doctor.getLastName(), is(equalTo("Jones")));
+    }
+
+    @Test
+    public void confirmDoctorCanGetFirstNameFromFull() {
+        Doctor doctor = new Doctor();
+        doctor.setName("Jonas Jones");
+        assertThat(doctor.getFirstName(), is(equalTo("Jonas")));
     }
 
     @Test

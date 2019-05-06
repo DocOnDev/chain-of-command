@@ -4,11 +4,15 @@ class Doctor {
     private Name name = new Name("");
 
     String getLastName() {
-        return name.getLastName();
+        return this.name.getLastName();
     }
 
     void setName(String fullName) {
         this.name = new Name(fullName);
+    }
+
+    String getFirstName() {
+        return this.name.getFirstName();
     }
 }
 
@@ -24,5 +28,9 @@ class Name {
 
     String getLastName() {
         return this.lastName;
+    }
+
+    String getFirstName() {
+        return this.firstName;
     }
 }

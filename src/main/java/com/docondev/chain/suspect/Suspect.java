@@ -1,13 +1,16 @@
 package com.docondev.chain.suspect;
 
+import java.util.ArrayList;
 import java.util.List;
 
 class Suspect {
-    private List<String> properties;
+    private List<String> properties = new ArrayList<>();
     private Double weight = 178.4;
     private Double volume = 19.0;
-    private List<String> hobbies;
-    private Doctor doctor;
+    private List<String> hobbies = new ArrayList<>();
+    private Doctor doctor = new Doctor();
+    private String homeTown = "";
+    private String occupation = "";
 
     Double getWeight() {
         return this.weight;
@@ -26,14 +29,26 @@ class Suspect {
     }
 
     Doctor getDoctor() {
-        return doctor;
+        return this.doctor;
     }
 
     String getHomeTown() {
-        return null;
+        return this.homeTown;
     }
 
     String getOccupation() {
-        return null;
+        return this.occupation;
+    }
+
+    void setWeight(Double weight) {
+        this.weight = weight;
+    }
+
+    void setVolume(Double volume) {
+        this.volume = volume;
+    }
+
+    void addProperty(String property) {
+        this.properties.add(property);
     }
 }

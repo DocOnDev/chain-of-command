@@ -2,8 +2,7 @@ package com.docondev.chain.suspect;
 
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 
 public class DoctorTest {
@@ -13,5 +12,11 @@ public class DoctorTest {
         Doctor doctor = new Doctor();
         doctor.setName("Jonas Jones");
         assertThat(doctor.getLastName(), is(equalTo("Jones")));
+    }
+
+    @Test
+    public void confirmDoctorDoesNotHaveNullLastName() {
+        Doctor doctor = new Doctor();
+        assertThat(doctor.getLastName(), is(notNullValue()));
     }
 }

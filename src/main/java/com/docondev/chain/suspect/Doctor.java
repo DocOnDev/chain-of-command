@@ -1,7 +1,7 @@
 package com.docondev.chain.suspect;
 
 class Doctor {
-    private Name name;
+    private Name name = new Name("");
 
     String getLastName() {
         return name.getLastName();
@@ -18,8 +18,8 @@ class Name {
 
     Name(String fullName) {
         String[] splitName = fullName.split(" ");
-        firstName = splitName[0];
-        lastName = splitName[1];
+        firstName = splitName.length > 0 ? splitName[0] : "";
+        lastName = splitName.length > 1 ? splitName[1] : "";
     }
 
     String getLastName() {

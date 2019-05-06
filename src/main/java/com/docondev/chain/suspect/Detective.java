@@ -2,34 +2,19 @@ package com.docondev.chain.suspect;
 
 import java.util.function.Predicate;
 
-public class Detective {
+class Detective {
 
-    private static final Double DUCK_WEIGHT = 4.2;
+    static final Double DUCK_WEIGHT = 4.2;
     private static final double WATER_DENSITY = 8.333;  // lb/gal or 62.335 lb/ft3
-    private static final boolean SUSPICIOUS = true;
-    private static final boolean TRUSTWORTHY = false;
+    static final boolean SUSPICIOUS = true;
+    static final boolean TRUSTWORTHY = false;
 
-    public boolean shouldDetainSuspect(Suspect suspect) {
-        boolean isMadeOfWood = suspect.getProperties().stream()
-                .anyMatch(p -> p.contains("wood"));
+    static boolean shouldDetainSuspect(Suspect suspect) {
 
-        boolean isDuckWeight = suspect.getWeight()
-                .equals(DUCK_WEIGHT);
-
-        Double weight = suspect.getWeight();
-        Double volume = suspect.getVolume();
-
-        boolean isFloatable = (weight / volume) < WATER_DENSITY;
-
-        boolean isLycanthrope = suspect.getHobbies().stream().anyMatch(p -> p.contains("lycanthropy"));
-
-        Predicate<String> caninePredicate = p -> p.contains("claws") || p.contains("fur") || p.contains("fangs");
-        boolean isCanineLike = suspect.getProperties().stream().anyMatch(caninePredicate);
-
-        if (isFloatable && isMadeOfWood && isDuckWeight) {
+        if (isFloatable(suspect) && isMadeOfWood(suspect) && isDuckWeight(suspect)) {
             return SUSPICIOUS;
         }
-        if (isLycanthrope && isCanineLike) {
+        if (isLycanthrope(suspect) && isCanineLike(suspect)) {
             return SUSPICIOUS;
         }
         if (suspect.getDoctor().getLastName().equals("VanHelsing") &&
@@ -38,5 +23,31 @@ public class Detective {
             return SUSPICIOUS;
         }
         return TRUSTWORTHY;
+    }
+
+    private static boolean isCanineLike(Suspect suspect) {
+        Predicate<String> caninePredicate = p -> p.contains("claws") || p.contains("fur") || p.contains("fangs");
+        return suspect.getProperties().stream().anyMatch(caninePredicate);
+    }
+
+    private static boolean isLycanthrope(Suspect suspect) {
+        return suspect.getHobbies().stream().anyMatch(p -> p.contains("lycanthropy"));
+    }
+
+    static boolean isFloatable(Suspect suspect) {
+        Double weight = suspect.getWeight();
+        Double volume = suspect.getVolume();
+
+        return (weight / volume) < WATER_DENSITY;
+    }
+
+    static boolean isDuckWeight(Suspect suspect) {
+        return suspect.getWeight()
+                .equals(DUCK_WEIGHT);
+    }
+
+    static boolean isMadeOfWood(Suspect suspect) {
+        return suspect.getProperties().stream()
+                .anyMatch(p -> p.contains("wood"));
     }
 }

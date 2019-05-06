@@ -48,7 +48,7 @@ public class DetectiveTest {
     }
 
     @Test
-    public void givenWoodProperty_IsMadeofWood() {
+    public void givenWoodProperty_IsMadeOfWood() {
         suspect.addProperty("wood");
         assertThat(Detective.isMadeOfWood(suspect), is(true));
     }

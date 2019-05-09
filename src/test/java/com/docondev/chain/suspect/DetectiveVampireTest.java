@@ -1,14 +1,21 @@
 package com.docondev.chain.suspect;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class DetectiveWarewolfTest {
+public class DetectiveVampireTest {
 
     private Suspect suspect = new Suspect();
+
+    @Before
+    public void setUp() {
+        suspect.setWeight(Detective.DUCK_WEIGHT);
+        suspect.setVolume(4.0);
+    }
 
     @Test
     public void givenSuspectIsLycanthropeAndNotCanineLike_Innocent() {

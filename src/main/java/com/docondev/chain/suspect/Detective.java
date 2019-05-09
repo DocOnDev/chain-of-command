@@ -25,7 +25,7 @@ class Detective {
         return TRUSTWORTHY;
     }
 
-    private static boolean isCanineLike(Suspect suspect) {
+    static boolean isCanineLike(Suspect suspect) {
         Predicate<String> caninePredicate = p -> p.contains("claws") || p.contains("fur") || p.contains("fangs");
         return suspect.getProperties().stream().anyMatch(caninePredicate);
     }

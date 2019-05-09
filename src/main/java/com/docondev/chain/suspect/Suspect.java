@@ -51,4 +51,8 @@ class Suspect {
     void addProperty(String property) {
         this.properties.add(property);
     }
+
+    void addHobby(String hobby) {
+        this.hobbies.add(hobby);
+    }
 }

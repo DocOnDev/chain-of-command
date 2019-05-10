@@ -40,10 +40,23 @@ public class DetectiveWarewolfTest {
     }
 
     @Test
-    public void givenSUspectHasClawsAndFangsAndFur_IsCanineLike() {
+    public void givenSuspectHasClawsAndFangsAndFur_IsCanineLike() {
         suspect.addProperty("claws");
         suspect.addProperty("fur");
         suspect.addProperty("fangs");
         assertThat(Detective.isCanineLike(suspect), is(true));
+    }
+
+    @Test
+    public void givenSuspectIsCanineLikeAndNotLycanthrope_Innocent() {
+        suspect.addProperty("fangs");
+        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
+    }
+
+    @Test
+    public void givenSuspectIsCanineLikeAndIsLycanthrope_Suspiscous() {
+        suspect.addProperty("fur");
+        suspect.addHobby("lycanthropy");
+        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.SUSPICIOUS)));
     }
 }

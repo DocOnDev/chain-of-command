@@ -52,6 +52,10 @@ class Suspect {
         return this.doctor;
     }
 
+    void setHomeTown(String homeTown) {
+        this.homeTown = homeTown;
+    }
+
     String getHomeTown() {
         return this.homeTown;
     }

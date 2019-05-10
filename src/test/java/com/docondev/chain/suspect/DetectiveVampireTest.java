@@ -23,4 +23,20 @@ public class DetectiveVampireTest {
         suspect.setOccupation("prince");
         assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
     }
+
+    @Test
+    public void givenSuspectIsAPrinceAndDoctorIsVenHelsingAndHometownIsNotWallachian_Innocent() {
+        suspect.setOccupation("Prince");
+        suspect.setDoctor("Abraham VanHelsing");
+        suspect.setHomeTown("New York");
+        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
+    }
+
+    @Test
+    public void givenSuspectIsAPrinceAndDoctorIsVenHelsingAndHometownIsWallachian_Suspicious() {
+        suspect.setOccupation("Prince");
+        suspect.setDoctor("Abraham VanHelsing");
+        suspect.setHomeTown("Wallachian");
+        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.SUSPICIOUS)));
+    }
 }

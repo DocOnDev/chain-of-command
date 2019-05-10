@@ -17,9 +17,9 @@ class Detective {
         if (isLycanthrope(suspect) && isCanineLike(suspect)) {
             return SUSPICIOUS;
         }
-        if (suspect.getDoctor().getLastName().equals("VanHelsing") &&
+        if (suspect.getDoctor().getLastName().equalsIgnoreCase("VanHelsing") &&
                 suspect.getHomeTown().equals("Wallachian") &&
-                suspect.getOccupation().equals("prince")) {
+                suspect.getOccupation().equalsIgnoreCase("Prince")) {
             return SUSPICIOUS;
         }
         return TRUSTWORTHY;

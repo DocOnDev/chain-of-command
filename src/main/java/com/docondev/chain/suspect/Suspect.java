@@ -23,6 +23,7 @@ class Suspect {
     void setVolume(Double volume) {
         this.volume = volume;
     }
+
     Double getVolume() {
         return this.volume;
     }
@@ -30,6 +31,7 @@ class Suspect {
     void addProperty(String property) {
         this.properties.add(property);
     }
+
     List<String> getProperties() {
         return this.properties;
     }
@@ -37,6 +39,7 @@ class Suspect {
     void addHobby(String hobby) {
         this.hobbies.add(hobby);
     }
+
     List<String> getHobbies() {
         return this.hobbies;
     }
@@ -44,6 +47,7 @@ class Suspect {
     void setDoctor(String fullName) {
         this.doctor.setName(fullName);
     }
+
     Doctor getDoctor() {
         return this.doctor;
     }
@@ -55,6 +59,7 @@ class Suspect {
     void setOccupation(String occupation) {
         this.occupation = occupation;
     }
+
     String getOccupation() {
         return this.occupation;
     }

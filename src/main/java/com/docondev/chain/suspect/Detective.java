@@ -26,7 +26,7 @@ class Detective {
     }
 
     private static boolean isLycanthrope(Suspect suspect) {
-        return suspect.getHobbies().stream().anyMatch(p -> p.contains("lycanthropy"));
+        return suspect.getHobbies().stream().anyMatch(InterestingFacts.warewolfHobbies::contains);
     }
 
     static boolean isFloatable(Suspect suspect) {

@@ -1,7 +1,5 @@
 package com.docondev.chain.suspect;
 
-import java.util.function.Predicate;
-
 class Detective {
 
     static final boolean SUSPICIOUS = true;
@@ -24,8 +22,7 @@ class Detective {
     }
 
     static boolean isCanineLike(Suspect suspect) {
-        Predicate<String> caninePredicate = p -> p.contains("claws") || p.contains("fur") || p.contains("fangs");
-        return suspect.getProperties().stream().anyMatch(caninePredicate);
+        return suspect.getProperties().stream().anyMatch(InterestingFacts.canineAttributes::contains);
     }
 
     private static boolean isLycanthrope(Suspect suspect) {

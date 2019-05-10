@@ -13,7 +13,7 @@ public class DetectiveWitchTest {
 
     @Before
     public void setUp() {
-        suspect.setWeight(Detective.DUCK_WEIGHT);
+        suspect.setWeight(InterestingFacts.DUCK_WEIGHT);
         suspect.setVolume(4.0);
     }
 
@@ -43,7 +43,7 @@ public class DetectiveWitchTest {
     @Test
     public void givenSuspectIsFloatableAndNotDuckWeightAndWooden_Innocent() {
         suspect.addProperty("wood");
-        suspect.setWeight(Detective.DUCK_WEIGHT + 0.1);
+        suspect.setWeight(InterestingFacts.DUCK_WEIGHT + 0.1);
         assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
     }
 

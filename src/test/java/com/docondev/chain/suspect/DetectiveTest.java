@@ -32,13 +32,13 @@ public class DetectiveTest {
 
     @Test
     public void givenWeightIsLessThanDuck_NotDuckWeight() {
-        suspect.setWeight(Detective.DUCK_WEIGHT - 1);
+        suspect.setWeight(InterestingFacts.DUCK_WEIGHT - 1);
         assertThat(Detective.isDuckWeight(suspect), is(false));
     }
 
     @Test
     public void givenWeightSameAsDuck_DuckWeight() {
-        suspect.setWeight(Detective.DUCK_WEIGHT);
+        suspect.setWeight(InterestingFacts.DUCK_WEIGHT);
         assertThat(Detective.isDuckWeight(suspect), is(true));
     }
 

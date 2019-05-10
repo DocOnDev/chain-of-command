@@ -4,8 +4,6 @@ import java.util.function.Predicate;
 
 class Detective {
 
-    static final Double DUCK_WEIGHT = 4.2;
-    private static final double WATER_DENSITY = 8.333;  // lb/gal or 62.335 lb/ft3
     static final boolean SUSPICIOUS = true;
     static final boolean TRUSTWORTHY = false;
 
@@ -38,12 +36,12 @@ class Detective {
         Double weight = suspect.getWeight();
         Double volume = suspect.getVolume();
 
-        return (weight / volume) < WATER_DENSITY;
+        return (weight / volume) < InterestingFacts.WATER_DENSITY;
     }
 
     static boolean isDuckWeight(Suspect suspect) {
         return suspect.getWeight()
-                .equals(DUCK_WEIGHT);
+                .equals(InterestingFacts.DUCK_WEIGHT);
     }
 
     static boolean isMadeOfWood(Suspect suspect) {

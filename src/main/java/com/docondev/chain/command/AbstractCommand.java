@@ -1,8 +1,12 @@
 package com.docondev.chain.command;
 
 
+import java.util.logging.Logger;
+
 public abstract class AbstractCommand {
     protected AbstractCommand nextCommand;
+    final static Logger logger = Logger.getLogger(MixRateCommand.class.getName());
+
 
     public boolean execute(Controls controls) {
         if( isThisCommand(controls) ) {

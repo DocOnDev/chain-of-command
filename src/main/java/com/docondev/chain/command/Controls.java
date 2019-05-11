@@ -40,4 +40,12 @@ public class Controls implements Iterable<Control> {
         }
         return false;
     }
+
+    boolean hasDifferentFeatures() {
+        if (!controlList.isEmpty()) {
+            String feature = controlList.get(0).getFeature();
+            return !controlList.parallelStream().allMatch(i -> i.getFeature().equals(feature));
+        }
+        return false;
+    }
 }

@@ -11,7 +11,7 @@ public class TargetCommand extends AbstractCommand {
 
     @Override
     void executeCommand() {
-        System.out.println(COMMAND_NAME + " Command");
+        logger.info(COMMAND_NAME + " Command");
     }
 
     @Override

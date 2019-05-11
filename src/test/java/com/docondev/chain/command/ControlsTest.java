@@ -48,6 +48,22 @@ public class ControlsTest {
     }
 
     @Test
+    public void GivenDifferentFeatures_ReportsDifferentFeatures() {
+        controls.add(makeControlWithFeature("ABC"));
+        controls.add(makeControlWithFeature("XYZ"));
+
+        assertTrue(controls.hasDifferentFeatures());
+    }
+
+    @Test
+    public void GivenSameFeature_ReportsSameFeature() {
+        controls.add(makeControlWithFeature("ABC"));
+        controls.add(makeControlWithFeature("ABC"));
+
+        assertFalse(controls.hasDifferentFeatures());
+    }
+
+    @Test
     public void ControlsImplementsIterable() {
         assertTrue(Iterable.class.isAssignableFrom(controls.getClass()));
     }
@@ -55,6 +71,12 @@ public class ControlsTest {
     private Control makeControlWithTarget(Integer target) {
         Control control = new Control();
         control.setTarget(target);
+        return control;
+    }
+
+    private Control makeControlWithFeature(String feature) {
+        Control control = new Control();
+        control.setFeature(feature);
         return control;
     }
 

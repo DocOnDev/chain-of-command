@@ -12,7 +12,7 @@ public class MixRateCommand extends AbstractCommand {
 
     @Override
     void executeCommand() {
-        logger.info(COMMAND_NAME + " Command");
+        logger.info(String.format("%s Command", COMMAND_NAME));
     }
 
     @Override

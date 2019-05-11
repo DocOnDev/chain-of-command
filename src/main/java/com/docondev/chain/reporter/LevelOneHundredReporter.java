@@ -7,7 +7,7 @@ public class LevelOneHundredReporter extends AbstractLevelReporter {
 
     @Override
     protected Integer write(String message) {
-        logger.info("Level 100 Reporter: " + message);
+        logger.info(String.format("Level 100 Reporter: %s", message));
         return this.level;
     }
 }

@@ -4,8 +4,8 @@ package com.docondev.chain.command;
 import java.util.logging.Logger;
 
 public abstract class AbstractCommand {
-    protected AbstractCommand nextCommand;
-    final static Logger logger = Logger.getLogger(MixRateCommand.class.getName());
+    private AbstractCommand nextCommand;
+    static final Logger logger = Logger.getLogger(AbstractCommand.class.getName());
 
 
     public boolean execute(Controls controls) {

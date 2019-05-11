@@ -17,7 +17,7 @@ public abstract class AbstractCommand {
         return false;
     }
 
-    abstract protected boolean isThisCommand(Controls controls);
+    protected abstract boolean isThisCommand(Controls controls);
     abstract void executeCommand();
     abstract String getCommandName();
 

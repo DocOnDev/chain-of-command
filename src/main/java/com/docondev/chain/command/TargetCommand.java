@@ -2,6 +2,8 @@ package com.docondev.chain.command;
 
 public class TargetCommand extends AbstractCommand {
 
+    private static final String commandName = "Target";
+
     @Override
     protected boolean isThisCommand(Controls controls) {
         return controls.hasDifferentTargets();
@@ -9,11 +11,11 @@ public class TargetCommand extends AbstractCommand {
 
     @Override
     void executeCommand() {
-
+        System.out.println(commandName + " Command");
     }
 
     @Override
     String getCommandName() {
-        return "Target";
+        return commandName;
     }
 }

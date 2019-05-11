@@ -28,7 +28,7 @@ public abstract class AbstractReporter {
         return 0;
     }
 
-    abstract protected boolean isThisReporter(Integer level);
-    abstract protected Integer write(String message);
+    protected abstract boolean isThisReporter(Integer level);
+    protected abstract Integer write(String message);
 
 }

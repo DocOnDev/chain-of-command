@@ -5,6 +5,10 @@ class Detective {
     static final boolean SUSPICIOUS = true;
     static final boolean TRUSTWORTHY = false;
 
+    private Detective() {
+        throw new IllegalStateException("Static class");
+    }
+
     static boolean shouldDetainSuspect(Suspect suspect) {
 
         if (isFloatable(suspect) && isMadeOfWood(suspect) && isDuckWeight(suspect)) {

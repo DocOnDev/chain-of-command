@@ -9,7 +9,7 @@ public class CommandChainTest extends AbstractCommandTest {
     @Before
     public void setUp() {
         mixRateCommand.setNextCommand(targetCommand);
-//        controls.add(makeControl(MIX_RATE, 5));
+//        controlList.add(makeControl(MIX_RATE, 5));
     }
 
     @Test

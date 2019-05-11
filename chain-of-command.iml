@@ -2,7 +2,7 @@
 <module version="4">
   <component name="FacetManager">
     <facet type="Osmorc" name="OSGi">
-      <configuration manifestGenerationMode="Manually" manifestLocation="build/tmp/expandedArchives/org.jacoco.agent-0.8.3.jar_4b57cf550318c2dfec984d52b9993337/META-INF/MANIFEST.MF" jarfileLocation="chain-of-command.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
+      <configuration manifestGenerationMode="Manually" manifestLocation="build/tmp/expandedArchives/org.jacoco.agent-0.7.7.201606060606.jar_f8c9634072581da420b81d96be8d339f/META-INF/MANIFEST.MF" jarfileLocation="chain-of-command.jar" outputPathType="CompilerOutputPath" bndFileLocation="" bundlorFileLocation="" bundleActivator="" bundleSymbolicName="" bundleVersion="1.0.0" ignoreFilePattern="" useProjectDefaultManifestFileLocation="false" alwaysRebuildBundleJAR="false" doNotSynchronizeWithMaven="false">
         <additionalProperties />
         <additionalJARContents />
       </configuration>

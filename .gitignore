@@ -3,6 +3,8 @@
 
 # Ignore Gradle build output directory
 build
+out
 
 # Ignore Intellij meta data
 .idea
+*.iml

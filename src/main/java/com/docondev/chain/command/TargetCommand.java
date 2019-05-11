@@ -2,7 +2,7 @@ package com.docondev.chain.command;
 
 public class TargetCommand extends AbstractCommand {
 
-    private static final String commandName = "Target";
+    private static final String COMMAND_NAME = "Target";
 
     @Override
     protected boolean isThisCommand(Controls controls) {
@@ -11,11 +11,11 @@ public class TargetCommand extends AbstractCommand {
 
     @Override
     void executeCommand() {
-        System.out.println(commandName + " Command");
+        System.out.println(COMMAND_NAME + " Command");
     }
 
     @Override
     String getCommandName() {
-        return commandName;
+        return COMMAND_NAME;
     }
 }

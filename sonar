@@ -1,1 +1,1 @@
-./gradlew build test sonarqube   -Dsonar.projectKey=DocOnDev_chain-of-command   -Dsonar.organization=docondev-github   -Dsonar.host.url=https://sonarcloud.io   -Dsonar.login=f235ad9406a9ec4eeb3b18273d9565a11fed4aec
+./gradlew build test jacocoTestReport sonarqube   -Dsonar.projectKey=DocOnDev_chain-of-command   -Dsonar.organization=docondev-github   -Dsonar.host.url=https://sonarcloud.io   -Dsonar.login=f235ad9406a9ec4eeb3b18273d9565a11fed4aec

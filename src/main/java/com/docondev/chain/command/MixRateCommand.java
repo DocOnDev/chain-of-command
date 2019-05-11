@@ -2,7 +2,7 @@ package com.docondev.chain.command;
 
 public class MixRateCommand extends AbstractCommand {
 
-    private static final String commandName = "Mix Rate";
+    private static final String COMMAND_NAME = "Mix Rate";
 
     @Override
     protected boolean isThisCommand(Controls controls) {
@@ -12,11 +12,11 @@ public class MixRateCommand extends AbstractCommand {
 
     @Override
     void executeCommand() {
-        System.out.println(commandName + " Command");
+        System.out.println(COMMAND_NAME + " Command");
     }
 
     @Override
     String getCommandName() {
-        return commandName;
+        return COMMAND_NAME;
     }
 }

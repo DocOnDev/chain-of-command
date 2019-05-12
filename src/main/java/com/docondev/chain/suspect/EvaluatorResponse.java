@@ -1,11 +1,13 @@
 package com.docondev.chain.suspect;
 
 
+import com.docondev.chain.suspect.AbstractEvaluatorCommand.Evaluations;
+
 public class EvaluatorResponse {
     private final String commandName;
-    private final Boolean evaluation;
+    private final Evaluations evaluation;
 
-    EvaluatorResponse(String commandName, boolean evaluation) {
+    EvaluatorResponse(String commandName, Evaluations evaluation) {
         this.commandName = commandName;
         this.evaluation = evaluation;
     }
@@ -14,7 +16,7 @@ public class EvaluatorResponse {
         return this.commandName;
     }
 
-    public Boolean getEvaluation() {
+    public Evaluations getEvaluation() {
         return this.evaluation;
     }
 }

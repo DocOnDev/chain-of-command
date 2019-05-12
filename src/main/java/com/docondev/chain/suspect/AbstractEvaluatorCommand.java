@@ -32,7 +32,7 @@ public abstract class AbstractEvaluatorCommand {
     }
 
     private EvaluatorResponse generatedResponse(Evaluations evaluation) {
-        return new EvaluatorResponse(getCommandName(), evaluation.decision);
+        return new EvaluatorResponse(getCommandName(), evaluation);
     }
 
     public void setNextCommand(AbstractEvaluatorCommand command) {

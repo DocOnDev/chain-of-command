@@ -26,6 +26,27 @@ public class VampireEvaluatorCommandTest {
 
     @Test
     public void givenPrinceAndNotFromWallachian_Trustworthy() {
+        suspect.setOccupation("prince");
+        suspect.setHomeTown("Chicago");
         assertThat(vampireEvaluator.execute(suspect).getEvaluation(), is(equalTo(Evaluations.TRUSTWORTHY)));
     }
+
+    @Test
+    public void givenPrinceAndFromWallachianAndDoctorNotVanHelsing_Trustworthy() {
+        suspect.setOccupation("prince");
+        suspect.setHomeTown("Wallachian");
+        suspect.setDoctor("Leonard McCoy");
+        assertThat(vampireEvaluator.execute(suspect).getEvaluation(), is(equalTo(Evaluations.TRUSTWORTHY)));
+
+    }
+
+    @Test
+    public void givenPrinceAndFromWallachianAndDoctorIsVanHelsing_Suspicious() {
+        suspect.setOccupation("prince");
+        suspect.setHomeTown("Wallachian");
+        suspect.setDoctor("Abraham VanHelsing");
+        assertThat(vampireEvaluator.execute(suspect).getEvaluation(), is(equalTo(Evaluations.SUSPICIOUS)));
+
+    }
+
 }

@@ -67,4 +67,9 @@ class Suspect {
     String getOccupation() {
         return this.occupation;
     }
+
+    boolean hasProperty(String desiredProperty) {
+        return getProperties().stream()
+                .anyMatch(p -> p.contains(desiredProperty));
+    }
 }

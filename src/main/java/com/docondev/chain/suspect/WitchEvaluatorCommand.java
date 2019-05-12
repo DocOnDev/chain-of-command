@@ -6,9 +6,8 @@ public class WitchEvaluatorCommand extends AbstractEvaluatorCommand {
         return isFloatable(suspect) && isWooden(suspect) && isDuckWeight(suspect);
     }
 
-    private static Boolean isWooden(Suspect suspect) {
-        return suspect.getProperties().stream()
-                .anyMatch(p -> p.contains("wood"));
+    private Boolean isWooden(Suspect suspect) {
+        return suspect.hasProperty("wood");
     }
 
     private static Boolean isDuckWeight(Suspect suspect) {

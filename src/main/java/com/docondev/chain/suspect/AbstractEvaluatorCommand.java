@@ -17,9 +17,6 @@ public abstract class AbstractEvaluatorCommand {
         }
     }
 
-    static final boolean SUSPICIOUS = true;
-    static final boolean TRUSTWORTHY = false;
-
     private AbstractEvaluatorCommand nextCommand;
     static final Logger logger = Logger.getLogger(AbstractEvaluatorCommand.class.getName());
 

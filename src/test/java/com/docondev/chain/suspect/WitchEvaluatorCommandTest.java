@@ -14,7 +14,7 @@ public class WitchEvaluatorCommandTest {
 
     @Before
     public void setUp() {
-        suspect.setWeight(InterestingFacts.DUCK_WEIGHT);
+        suspect.setWeight(WitchEvaluatorCommand.DUCK_WEIGHT);
         suspect.setVolume(4.0);
     }
 
@@ -37,7 +37,7 @@ public class WitchEvaluatorCommandTest {
     @Test
     public void givenSuspectIsFloatableAndNotDuckWeightAndWooden_Trustworthy() {
         suspect.addProperty("wood");
-        suspect.setWeight(InterestingFacts.DUCK_WEIGHT + 0.01);
+        suspect.setWeight(WitchEvaluatorCommand.DUCK_WEIGHT + 0.01);
         assertThat(witchEvaluator.execute(suspect).getEvaluation(), is(equalTo(Evaluations.TRUSTWORTHY)));
     }
 

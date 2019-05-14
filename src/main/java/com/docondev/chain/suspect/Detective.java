@@ -10,7 +10,7 @@ class Detective {
         WitchEvaluatorCommand witchEvaluator = new WitchEvaluatorCommand();
         VampireEvaluatorCommand vampireEvaluator = new VampireEvaluatorCommand();
 
-        vampireEvaluator.setNextCommand(new WarewolfEvaluatorCommand());
+        vampireEvaluator.setNextCommand(new WerewolfEvaluatorCommand());
         witchEvaluator.setNextCommand(vampireEvaluator);
 
         return witchEvaluator.execute(suspect);

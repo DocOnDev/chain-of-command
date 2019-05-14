@@ -9,68 +9,68 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
-public class WarewolfEvaluatorCommandTest {
+public class WerewolfEvaluatorCommandTest {
 
     private Suspect suspect;
-    private WarewolfEvaluatorCommand warewolfEvaluator;
+    private WerewolfEvaluatorCommand werewolfEvaluator;
 
     @Before
     public void setUp() {
         suspect = new Suspect();
-        warewolfEvaluator = new WarewolfEvaluatorCommand();
+        werewolfEvaluator = new WerewolfEvaluatorCommand();
     }
 
     @Test
-    public void confirmWarewolfEvaluator_ReportsWarewolfEvaluator() {
-        assertThat(warewolfEvaluator.execute(suspect).getCommandName(), is(equalTo("Warewolf Evaluator")));
+    public void confirmWerewolfEvaluator_ReportsWarewolfEvaluator() {
+        assertThat(werewolfEvaluator.execute(suspect).getCommandName(), is(equalTo("Werewolf Evaluator")));
     }
 
 
     @Test
-    public void givenSuspectHasFurAndIsLycanthrope_Suspiscous() {
+    public void givenSuspectHasFurAndIsLycanthrope_Suspicious() {
         suspect.addProperty("fur");
         suspect.addHobby("lycanthropy");
-        assertThat(warewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
+        assertThat(werewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
     }
 
     @Test
     public void givenSuspectHasFurAndIsNotLycanthrope_Innocent() {
         suspect.addProperty("fur");
-        assertThat(warewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(TRUSTWORTHY)));
+        assertThat(werewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(TRUSTWORTHY)));
     }
 
     @Test
-    public void givenSuspectHasFangsAndIsLycanthrope_Suspiscous() {
+    public void givenSuspectHasFangsAndIsLycanthrope_Suspicious() {
         suspect.addProperty("fangs");
         suspect.addHobby("lycanthropy");
-        assertThat(warewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
+        assertThat(werewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
     }
 
     @Test
-    public void givenSuspectHasFangsAndHowlsAtMoon_Suspiscous() {
+    public void givenSuspectHasFangsAndHowlsAtMoon_Suspicious() {
         suspect.addProperty("fangs");
         suspect.addHobby("howling at the moon");
-        assertThat(warewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
+        assertThat(werewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
     }
 
     @Test
     public void givenSuspectHasFangsAndIsNotLycanthrope_Innocent() {
         suspect.addProperty("fangs");
         suspect.addHobby("rock climbing");
-        assertThat(warewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(TRUSTWORTHY)));
+        assertThat(werewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(TRUSTWORTHY)));
     }
 
     @Test
-    public void givenSuspectHasClawssAndIsLycanthrope_Suspiscous() {
+    public void givenSuspectHasClawssAndIsLycanthrope_Suspicious() {
         suspect.addProperty("claws");
         suspect.addHobby("lycanthropy");
-        assertThat(warewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
+        assertThat(werewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(SUSPICIOUS)));
     }
 
     @Test
     public void givenSuspectHasClawsAndIsNotLycanthrope_Innocent() {
         suspect.addProperty("claws");
-        assertThat(warewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(TRUSTWORTHY)));
+        assertThat(werewolfEvaluator.execute(suspect).getEvaluation(), is(equalTo(TRUSTWORTHY)));
     }
 
 }

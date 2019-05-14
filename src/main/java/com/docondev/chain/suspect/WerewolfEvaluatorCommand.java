@@ -1,6 +1,6 @@
 package com.docondev.chain.suspect;
 
-public class WarewolfEvaluatorCommand extends AbstractEvaluatorCommand {
+public class WerewolfEvaluatorCommand extends AbstractEvaluatorCommand {
     @Override
     protected boolean shouldDetain(Suspect suspect) {
         return isCanineLike(suspect) && isLycanthrope(suspect);

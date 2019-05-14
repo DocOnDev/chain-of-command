@@ -23,7 +23,7 @@ public class DetectiveWarewolfTest {
     }
 
     @Test
-    public void givenSuspectIsCanineLikeAndIsLycanthrope_Suspiscous() {
+    public void givenSuspectIsCanineLikeAndIsLycanthrope_Suspicious() {
         suspect.addProperty("fur");
         suspect.addHobby("lycanthropy");
         assertThat(Detective.shouldDetainSuspect(suspect).getEvaluation(), is(equalTo(Evaluations.SUSPICIOUS)));

@@ -25,7 +25,7 @@ public class DetectiveWitchTest {
     }
 
     @Test
-    public void givenSuspectIsFloatableAndDuckWeightAndWooden_Suspiscous() {
+    public void givenSuspectIsFloatableAndDuckWeightAndWooden_Suspicious() {
         suspect.addProperty("wood");
         assertThat(Detective.shouldDetainSuspect(suspect).getEvaluation(), is(equalTo(Evaluations.SUSPICIOUS)));
     }

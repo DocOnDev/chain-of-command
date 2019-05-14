@@ -1,5 +1,6 @@
 package com.docondev.chain.suspect;
 
+import com.docondev.chain.suspect.AbstractEvaluatorCommand.Evaluations;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -21,37 +22,8 @@ public class DetectiveTest {
     }
 
     @Test
-    public void givenWeightDividedByVolumeLessThanWaterDensity_Floatable() {
-        assertThat(Detective.isFloatable(suspect), is(true));
-    }
-
-    @Test
-    public void givenWeightIsMoreThanDuck_NotDuckWeight() {
-        assertThat(Detective.isDuckWeight(suspect), is(false));
-    }
-
-    @Test
-    public void givenWeightIsLessThanDuck_NotDuckWeight() {
-        suspect.setWeight(InterestingFacts.DUCK_WEIGHT - 1);
-        assertThat(Detective.isDuckWeight(suspect), is(false));
-    }
-
-    @Test
-    public void givenWeightSameAsDuck_DuckWeight() {
-        suspect.setWeight(InterestingFacts.DUCK_WEIGHT);
-        assertThat(Detective.isDuckWeight(suspect), is(true));
-    }
-
-    @Test
     public void givenSuspectIsFloatableAndNotDuckWeight_Innocent() {
-        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
+        assertThat(Detective.shouldDetainSuspect(suspect).getEvaluation(), is(equalTo(Evaluations.TRUSTWORTHY)));
     }
-
-    @Test
-    public void givenWoodProperty_IsMadeOfWood() {
-        suspect.addProperty("wood");
-        assertThat(Detective.isMadeOfWood(suspect), is(true));
-    }
-
 
 }

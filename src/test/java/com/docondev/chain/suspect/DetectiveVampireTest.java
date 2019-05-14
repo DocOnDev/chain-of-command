@@ -1,5 +1,6 @@
 package com.docondev.chain.suspect;
 
+import com.docondev.chain.suspect.AbstractEvaluatorCommand.Evaluations;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -14,14 +15,14 @@ public class DetectiveVampireTest {
     public void givenSuspectDoctorIsVanHelsingAndNotAPrince_Innocent() {
         suspect.setDoctor("Abraham VanHelsing");
         suspect.setOccupation("jester");
-        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
+        assertThat(Detective.shouldDetainSuspect(suspect).getEvaluation(), is(equalTo(Evaluations.TRUSTWORTHY)));
     }
 
     @Test
     public void givenSuspectIsAPrinceAndDoctorIsNotVanHelsing_Innocent() {
         suspect.setDoctor("Leonard McCoy");
         suspect.setOccupation("prince");
-        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
+        assertThat(Detective.shouldDetainSuspect(suspect).getEvaluation(), is(equalTo(Evaluations.TRUSTWORTHY)));
     }
 
     @Test
@@ -29,7 +30,7 @@ public class DetectiveVampireTest {
         suspect.setOccupation("Prince");
         suspect.setDoctor("Abraham VanHelsing");
         suspect.setHomeTown("New York");
-        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.TRUSTWORTHY)));
+        assertThat(Detective.shouldDetainSuspect(suspect).getEvaluation(), is(equalTo(Evaluations.TRUSTWORTHY)));
     }
 
     @Test
@@ -37,6 +38,6 @@ public class DetectiveVampireTest {
         suspect.setOccupation("Prince");
         suspect.setDoctor("Abraham VanHelsing");
         suspect.setHomeTown("Wallachian");
-        assertThat(Detective.shouldDetainSuspect(suspect), is(equalTo(Detective.SUSPICIOUS)));
+        assertThat(Detective.shouldDetainSuspect(suspect).getEvaluation(), is(equalTo(Evaluations.SUSPICIOUS)));
     }
 }
